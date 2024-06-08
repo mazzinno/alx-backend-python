@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
+
 '''
-first eeelement of a sequence
+Duck typing - first element of a sequence
 '''
-from typing import Any, Sequence, Union
+
+from typing import Iterable, List, Sequence, Tuple, Union, Any
+
+# The types of the elements of the input are not know
 
 
 def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
     '''
-    it Retrieves the first element of a sequence if it exists
+    Return first element in list
     '''
     if lst:
         return lst[0]
     else:
         return None
-

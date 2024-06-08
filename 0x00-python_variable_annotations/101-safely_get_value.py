@@ -1,21 +1,20 @@
 #!/usr/bin/env python3
-'''
-now More involved type annotations
-'''
-from typing import Any, Mapping, Union, TypeVar
 
+'''
+More involved type annotations
+'''
+
+from typing import Union, Any, TypeVar, Mapping
 
 T = TypeVar('T')
-Res = Union[Any, T]
-Def = Union[T, None]
 
 
-def safely_get_value(dct: Mapping, key: Any, default: Def = None) -> Res:
+def safely_get_value(dct: Mapping, key: Any,
+                     default: Union[T, None] = None) -> Union[Any, T]:
     '''
-    it Retrieves a value from a dict using a given key
+    return dictionary key
     '''
     if key in dct:
         return dct[key]
     else:
         return default
-
